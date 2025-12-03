@@ -1,0 +1,172 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --var_blue: #2981d3;
+    --var_white: #dedede;
+    --var_lightblue: #4ec4ff;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: block;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--var_white);
+  color: var(--var_white);
+}
+
+nav {
+    z-index: 99;
+  background: var(--var_blue);
+  width: 60vw;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 10px 3px 10px 3px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.8s ease;
+}
+
+nav:hover {
+  transform: scale(1.05);
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    color: var(--var_white);
+    font-size: 1em;
+    font-weight: 600;
+    flex: 1;
+    transition: color 0.8s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--var_white), var(--var_lightblue));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.8s ease;
+}
+
+p {
+    color: red;
+    font-size: 3em;
+}
+
+nav a:hover {
+  color: var(--var_lightblue);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Mobile toggle button */
+.toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: var(--var_blue);
+  width: 100%;
+  background-color: var(--var_blue);
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border-radius: 0px 0px 12px 12px;
+
+  h1 {
+    font-size: 1.3em;
+    background-color: var(--var_lightblue); 
+    color: var(--var_white);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    padding: 5px;
+    margin-left: 10px;
+  }
+}
+
+/* Desktop Breakpoint */
+@media (max-width: 1200px) {
+
+  body {
+        background-color: yellow;
+  }
+}
+
+/* Laptop Breakpoint */
+@media (max-width: 1024px) {
+
+    nav {
+        width: 90%
+    }
+  body {
+        background-color: red;
+  }
+}
+
+  /* Tablet Breakpoint */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+    width: 20vw;
+  }
+  nav.active {
+    display: flex;
+  }
+  .toggle {
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  
+  body {
+    background-color: green;
+  }
+}
+
+/* Mobile Phone Breakpoint */
+@media (max-width: 320px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+  }
+  nav.active {
+    display: flex;
+  }
+  .toggle {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  body {
+    background-color: blue;
+  }
+}
+
+
+
