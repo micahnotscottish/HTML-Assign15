@@ -1,7 +1,10 @@
 // Simple JS toggle for mobile
-const toggleBtn = document.querySelector('.toggle');
+const toggleBtn = document.getElementById('menubtn');
 const nav = document.getElementById('navbar');
 
-toggleBtn.addEventListener('click', () => {
+toggleBtn.addEventListener('mouseover', () => {
   nav.classList.toggle('active');
+toggleBtn.addEventListener('mouseleave', () => {
+  nav.classList.toggle('active');
+})
 });
